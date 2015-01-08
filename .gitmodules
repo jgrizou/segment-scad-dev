@@ -1,3 +1,6 @@
 [submodule "scad-utils"]
 	path = scad-utils
 	url = https://github.com/jgrizou/scad-utils
+[submodule "list-comprehension-demos"]
+	path = list-comprehension-demos
+	url = https://github.com/jgrizou/list-comprehension-demos
