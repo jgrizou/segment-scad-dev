@@ -15,6 +15,7 @@ skin(morph(
   profile2=transform(translation([0,0,3]), rectangle_profile([5,2])),
   slices=40));
 
+echo(circle(r=0.5));
 
 // Path
 path_definition = [
