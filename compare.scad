@@ -18,20 +18,20 @@ trajectory(forward = 10, roll  =  0)
 
 // sweep
 path = quantize_trajectories(path_definition, steps=100, loop=false);
-/*sweep(rectangle_profile([2,3]), path);*/
+sweep(rectangle_profile([2,3]), path);
 
 // skin
 trans = [ for (i=[0:len(path)-1]) transform(path[i], rectangle_profile([2,3])) ];
+translate([0,10,0])
+  skin(trans);
 
-/*translate([0,10,0])
-  skin(trans);*/
-
-
+// advance
 profile_definition = [
 circle(5),
 rectangle_profile([2,3]),
 circle(5)
 ];
+
 /*
 echo(profile_definition);
 echo(len(path));
@@ -43,8 +43,8 @@ prof2 = transform(translation([0,0,0]), rectangle_profile([1,5]));
 tt = morph(prof1, prof2, slices=101);
 
 toto = [ for (i=[0:len(pp)-1]) transform(pp[i], tt[i])];
-
-skin(toto);
+translate([0,20,0])
+  skin(toto);
 
 echo(len(tt));
 
